@@ -65,7 +65,7 @@ Selected Model: Logistic Regression - The model was selected because it achieved
 
 ## How to Run
 ### 1. Clone the Repository
-git clone https://github.com/ghorijemisha9-collab/Insurance-Claim-Fraud-Detection.git
+git clone https://github.com/JemishaGhori/Insurance-Claim-Fraud-Detection.git
 
 ### 2. Navigate to the Project Folder
 cd Insurance-Claim-Fraud-Detection
