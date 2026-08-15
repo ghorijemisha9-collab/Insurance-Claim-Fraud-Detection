@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insurance Claim Fraud Detection</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Insurance Claim Fraud Detection</h1>
+<form action="/predict" method="POST">
+
+<h2>Basic Details</h2>
+<div>
+<label>Month</label>
+<input type="text" name="Month" required>
+</div>
+
+<div><label>Week Of Month</label>
+<input type="number" name="WeekOfMonth" min="1" max="5" required></div>
+
+<div><label>Day Of Week</label>
+<input type="text" name="DayOfWeek" required></div>
+
+<div><label>Make</label><input type="text" name="Make" required></div>
+
+<div><label>Accident Area</label>
+<select name="AccidentArea">
+<option>Urban</option>
+<option>Rural</option>
+</select></div>
+
+<div><label>Day Of Week Claimed</label>
+<input type="text" name="DayOfWeekClaimed" required></div>
+
+<div><label>Month Claimed</label>
+<input type="text" name="MonthClaimed" required></div>
+
+<div><label>Week Of Month Claimed</label>
+<input type="number" name="WeekOfMonthClaimed" min="1" max="5" required></div>
+
+<div><label>Sex</label>
+<select name="Sex">
+<option>Male</option>
+<option>Female</option>
+</select></div>
+
+<div>
+<label>Marital Status</label><input type="text" name="MaritalStatus" required></div>
+
+<div>
+<label>Age</label><input type="number" name="Age" required></div>
+
+<div>
+<label>Fault</label>
+<select name="Fault">
+<option>Policy Holder</option>
+<option>Third Party</option>
+</select></div>
+
+<div>
+<label>Policy Type</label><input type="text" name="PolicyType" required></div>
+
+<div>
+<label>Vehicle Category</label><input type="text" name="VehicleCategory" required></div>
+
+<div>
+<label>Vehicle Price</label><input type="text" name="VehiclePrice" required></div>
+
+<div>
+<label>Representative Number</label><input type="number" name="RepNumber" required></div>
+
+<div>
+<label>Deductible</label><input type="number" name="Deductible" required></div>
+
+<div>
+<label>Driver Rating</label><input type="number" name="DriverRating" min="1" max="4" required></div>
+
+<div>
+<label>Days Policy Accident</label><input type="text" name="Days_Policy_Accident" required></div>
+
+<div>
+<label>Days Policy Claim</label><input type="text" name="Days_Policy_Claim" required></div>
+
+<div>
+<label>Past Number Of Claims</label><input type="text" name="PastNumberOfClaims" required></div>
+
+<div>
+<label>Age Of Vehicle</label><input type="text" name="AgeOfVehicle" required></div>
+
+<div>
+<label>Age Of Policy Holder</label><input type="text" name="AgeOfPolicyHolder" required></div>
+
+<div>
+<label>Police Report Filed</label>
+<select name="PoliceReportFiled">
+<option>Yes</option>
+<option>No</option>
+</select></div>
+
+<div>
+<label>Witness Present</label>
+<select name="WitnessPresent">
+<option>Yes</option>
+<option>No</option>
+</select></div>
+
+<div>
+<label>Agent Type</label><input type="text" name="AgentType" required></div>
+
+<div>
+<label>Number Of Suppliments</label><input type="text" name="NumberOfSuppliments" required></div>
+
+<div>
+<label>Address Change Claim</label><input type="text" name="AddressChange_Claim" required></div>
+
+<div>
+<label>Number Of Cars</label><input type="text" name="NumberOfCars" required></div>
+
+<div>
+<label>Year</label><input type="number" name="Year" required></div>
+
+<div>
+<label>Base Policy</label><input type="text" name="BasePolicy" required></div>
+
+<div>
+<br><br>
+<div class="submit">
+    <input type="submit" value="Predict Fraud">
+</div>
+</form>
+</div>
+
+{% if prediction_text %}
+
+<div class="result">
+    <h2>{{ prediction_text }}</h2>
+    <h3>Fraud Probability : {{ probability }}%</h3>
+</div>
+
+{% endif %}
+
+</div>
+</body>
+</html>
